@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أكاديمية كلمة — برنامج تأهيل المعلمين | Kalima Academy</title>
+<meta name="description" content="Kalima Academy — for making teachers more qualified. برنامج تأهيل المعلمين لتعليم القرآن والتجويد والعربية والدراسات الإسلامية لغير الناطقين بالعربية. الدفعة الثانية — أماكن محدودة.">
+
+<!--
+  HOW TO EDIT THIS SITE
+  1. WHATSAPP BOOKING NUMBER: search for WA_NUMBER below in the script
+     and put the booking number between the quotes (e.g. "2010XXXXXXXX").
+     Every WhatsApp button on the page activates automatically.
+  2. PRICES / CONTENT: the Arabic block is inside <div class="L ar">,
+     the English block inside <div class="L en">. Edit text in both.
+  3. COLORS: the variables in :root just below.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#F7F3EA;--paper:#FFFFFF;--ink:#26251F;--green:#2E4636;--green-soft:#3E5C48;
+  --gold:#AE8A54;--sage:#DCE3D6;--sand:#E8DCC4;
+  --serif:'Cormorant Garamond',Georgia,serif;--quran:'Amiri Quran',serif;
+  --sans:'Jost','Helvetica Neue',Arial,sans-serif;--arabic:'Noto Naskh Arabic',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--arabic);font-weight:400;line-height:1.75;-webkit-font-smoothing:antialiased}
+body.en{font-family:var(--sans);font-weight:300;line-height:1.65}
+a{color:inherit;text-decoration:none}
+body.en .L.ar{display:none}
+body:not(.en) .L.en{display:none}
+
+.announce{background:var(--green);color:var(--cream);text-align:center;font-size:14px;padding:10px 16px}
+.announce b{color:var(--sand);font-weight:700}
+body.en .announce{font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+
+header{position:sticky;top:0;background:rgba(247,243,234,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(38,37,31,.08);z-index:50}
+.nav{max-width:1180px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:.06em;display:flex;align-items:center;gap:10px;direction:ltr}
+.logo .mark{font-family:var(--quran);color:var(--gold);font-size:30px;line-height:1}
+.nav-links{display:flex;gap:26px;font-size:14px}
+body.en .nav-links{font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.nav-links a{position:relative;padding:4px 0}
+.nav-links a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.nav-links a:hover:after{width:100%}
+.nav-cta{font-size:13px;border:1px solid var(--green);color:var(--green);padding:9px 20px;transition:.3s;white-space:nowrap}
+.nav-cta:hover{background:var(--green);color:var(--cream)}
+.lang-btn{font-size:12px;letter-spacing:.08em;border:1px solid var(--gold);color:var(--gold);padding:8px 16px;background:none;cursor:pointer;font-family:var(--sans)}
+.lang-btn:hover{background:var(--gold);color:#fff}
+@media(max-width:860px){.nav-links{display:none}}
+
+.hero{max-width:1180px;margin:0 auto;padding:64px 28px 76px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero-eyebrow{font-size:15px;font-weight:700;color:var(--gold);margin-bottom:16px}
+body.en .hero-eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase}
+.hero h1{font-family:var(--quran);font-size:clamp(44px,6vw,74px);font-weight:400;line-height:1.35;margin-bottom:8px;color:var(--green)}
+body.en .hero h1{font-family:var(--serif);font-weight:500;line-height:1.08}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold);margin-bottom:18px;direction:ltr;text-align:right}
+body.en .hero .tagline{text-align:left}
+.hero p{max-width:52ch;font-size:17px;margin-bottom:26px;color:#4c4841}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-size:14px;font-weight:600;padding:14px 30px;border:1px solid var(--green);transition:.3s;cursor:pointer;background:none;font-family:inherit}
+body.en .btn{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-family:var(--sans)}
+.btn.solid{background:var(--green);color:var(--cream)}
+.btn.solid:hover{background:var(--green-soft)}
+.btn.ghost{color:var(--green)}
+.btn.ghost:hover{background:var(--green);color:var(--cream)}
+.btn.pending{opacity:.55;cursor:default}
+.urgency{display:inline-block;background:var(--sand);border:1px solid var(--gold);color:var(--green);font-weight:700;font-size:14.5px;padding:8px 18px;border-radius:30px;margin-bottom:22px}
+.hero-art{display:flex;justify-content:center}
+.arch{width:min(380px,80vw);aspect-ratio:3/4;border-radius:190px 190px 0 0;background:linear-gradient(165deg,var(--sage) 0%,var(--cream) 55%,var(--sand) 100%);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 30px 60px -30px rgba(38,37,31,.35)}
+.arch .word{font-family:var(--quran);font-size:110px;color:var(--green);line-height:1;padding-bottom:40px}
+.arch .halo{position:absolute;top:11%;right:15%;width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#EBDCBB,var(--gold));opacity:.85}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding:44px 22px 60px}.hero-art{order:-1}.arch{aspect-ratio:16/10;border-radius:180px 180px 0 0}.arch .word{font-size:80px;padding-bottom:0}}
+
+.strip{background:var(--green);color:var(--cream);overflow:hidden;padding:14px 0}
+.strip-track{display:flex;gap:56px;white-space:nowrap;animation:scroll 28s linear infinite;font-size:13px;width:max-content}
+body.en .strip-track{font-size:12px;letter-spacing:.26em;text-transform:uppercase}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+html[dir="rtl"] .strip-track{animation-name:scroll-rtl}
+@keyframes scroll-rtl{from{transform:translateX(0)}to{transform:translateX(50%)}}
+.strip-track span{display:flex;align-items:center;gap:56px}
+.dot{color:var(--gold)}
+
+.section{max-width:1180px;margin:0 auto;padding:80px 28px}
+.section-head{text-align:center;margin-bottom:52px}
+.section-head .eyebrow{font-size:14px;font-weight:700;color:var(--gold);margin-bottom:12px}
+body.en .section-head .eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase}
+.section-head h2{font-family:var(--quran);font-size:clamp(34px,4.6vw,52px);font-weight:400;color:var(--green);line-height:1.4}
+body.en .section-head h2{font-family:var(--serif);font-weight:500}
+.section-head p{max-width:60ch;margin:12px auto 0;color:#4c4841;font-size:16px}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media(max-width:900px){.grid2,.grid3,.grid4{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid4{grid-template-columns:1fr}}
+
+.card{background:var(--paper);border:1px solid rgba(38,37,31,.1);padding:32px 28px}
+.card h3{font-family:var(--quran);font-size:27px;font-weight:400;color:var(--green);margin-bottom:10px}
+body.en .card h3{font-family:var(--serif);font-weight:600}
+.card p,.card li{font-size:15px;color:#4c4841}
+.card ul{list-style:none;margin-top:8px}
+.card li{padding:8px 18px 8px 0;position:relative;border-top:1px solid rgba(38,37,31,.08)}
+html[dir="ltr"] .card li{padding:8px 0 8px 22px}
+.card li:before{content:"✦";position:absolute;right:0;color:var(--gold);font-size:11px;top:12px}
+html[dir="ltr"] .card li:before{right:auto;left:0}
+.card.dark{background:var(--green);color:var(--cream);border-color:var(--green)}
+.card.dark h3{color:var(--sand)}
+.card.dark p,.card.dark li{color:#cfd6cb}
+.card.dark li{border-color:rgba(255,255,255,.14)}
+
+.course{background:var(--paper);border:1px solid rgba(38,37,31,.09);padding:30px 26px;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.course:hover{transform:translateY(-5px);box-shadow:0 22px 44px -22px rgba(38,37,31,.28)}
+.course .glyph{font-family:var(--quran);font-size:42px;color:var(--green);line-height:1.5;margin-bottom:6px}
+.course h4{font-family:var(--quran);font-size:25px;font-weight:400;color:var(--green);margin-bottom:8px}
+body.en .course h4{font-family:var(--serif);font-weight:600}
+.course p{font-size:14.5px;color:#6a6559;margin-bottom:14px;flex:1}
+.course .price{font-size:16px;color:var(--gold);font-weight:700;border-top:1px solid rgba(38,37,31,.08);padding-top:12px}
+.course .price s{color:#a39c8c;font-weight:400;font-size:14px;margin-inline-start:8px}
+
+.steps{background:var(--sand)}
+.step{background:var(--cream);padding:32px 26px;border:1px solid rgba(38,37,31,.08)}
+.step .num{font-family:var(--serif);font-size:44px;color:var(--gold);font-weight:500;line-height:1;margin-bottom:12px}
+.step h4{font-family:var(--quran);font-size:24px;font-weight:400;color:var(--green);margin-bottom:8px}
+body.en .step h4{font-family:var(--serif);font-weight:600}
+.step p{font-size:14.5px;color:#4c4841}
+
+.plan{background:var(--paper);border:1px solid rgba(38,37,31,.1);padding:38px 30px;text-align:center;position:relative;display:flex;flex-direction:column}
+.plan.featured{background:var(--green);color:var(--cream);border-color:var(--green)}
+.plan .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:13px;font-weight:700;padding:6px 16px;white-space:nowrap}
+body.en .plan .badge{font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+.plan h4{font-family:var(--quran);font-size:26px;font-weight:400;margin-bottom:4px}
+body.en .plan h4{font-family:var(--serif);font-weight:600}
+.plan .amount{font-family:var(--serif);font-size:48px;font-weight:600;margin:10px 0 2px;direction:ltr}
+.plan .amount small{font-size:18px;font-weight:400}
+.plan .was{font-size:14px;color:#a39c8c;margin-bottom:16px}
+.plan.featured .was{color:#cfd6cb}
+.plan .was s{margin-inline-end:4px}
+.plan ul{list-style:none;margin-bottom:24px;flex:1}
+.plan li{font-size:14.5px;padding:8px 0;border-top:1px solid rgba(38,37,31,.08)}
+.plan.featured li{border-color:rgba(255,255,255,.14)}
+.plan .btn{width:100%}
+.plan-note{text-align:center;font-size:14.5px;color:#6a6559;margin-top:26px;max-width:60ch;margin-inline:auto}
+
+.paybox{background:var(--paper);border:1px solid rgba(38,37,31,.1);padding:34px 30px;text-align:center}
+.paybox .num{font-family:var(--serif);font-size:34px;font-weight:600;color:var(--green);direction:ltr;display:inline-block;margin:8px 0}
+.paybox p{font-size:15px;color:#4c4841}
+.paybox .hint{font-size:13.5px;color:#8a8478;margin-top:10px}
+
+.cta{background:var(--green);color:var(--cream);text-align:center;padding:84px 28px}
+.cta .word{font-family:var(--quran);font-size:56px;color:var(--sand);margin-bottom:14px;line-height:1.5}
+.cta h2{font-family:var(--quran);font-size:clamp(32px,4.4vw,50px);font-weight:400;margin-bottom:14px}
+body.en .cta h2{font-family:var(--serif);font-weight:500}
+.cta p{max-width:52ch;margin:0 auto 30px;color:#cfd6cb;font-size:16px}
+.cta .btn{border-color:var(--cream);color:var(--cream)}
+.cta .btn:hover{background:var(--cream);color:var(--green)}
+.cta .btn.solid{background:var(--gold);border-color:var(--gold);color:#fff}
+.cta .btn.solid:hover{background:var(--cream);color:var(--green);border-color:var(--cream)}
+.slot-note{margin-top:18px;font-size:13.5px;color:#cfd6cb;opacity:.8}
+
+footer{background:var(--ink);color:var(--cream)}
+.foot{max-width:1180px;margin:0 auto;padding:56px 28px 32px;display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;align-items:flex-start}
+.foot p{font-size:14px;color:#b8b2a4;margin-top:10px;max-width:36ch}
+.copy{border-top:1px solid rgba(255,255,255,.1);text-align:center;padding:20px;font-size:12px;color:#8a8478}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ ARABIC (default) ══════════════ -->
+<div class="L ar">
+
+<div class="announce">التسجيل مفتوح للدفعة الثانية · <b>تبدأ خلال 5 أيام — الأماكن محدودة</b> · جلستك التجريبية مجانية</div>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="#"><span class="mark">كلمة</span> Kalima Academy</a>
+    <div class="nav-links">
+      <a href="#program">البرنامج</a>
+      <a href="#courses">الدورات</a>
+      <a href="#pricing">الأسعار</a>
+      <a href="#installments">التقسيط</a>
+      <a href="#pay">طريقة الدفع</a>
+      <a href="#contact">تواصل</a>
+    </div>
+    <button class="lang-btn" onclick="setLang('en')">English</button>
+    <a class="nav-cta" href="#contact">جلسة تجريبية مجانية</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow">أكاديمية كلمة — برنامج تأهيل المعلمين</div>
+    <h1>برنامج تأهيل المعلمين <em>الدفعة الثانية</em></h1>
+    <div class="tagline">Kalima Academy — for making teachers more qualified.</div>
+    <div class="urgency">⏰ تبدأ الدفعة خلال 5 أيام — الأماكن محدودة</div>
+    <p>بعد نجاح الدفعة الأولى، نفتح التسجيل للدفعة الثانية من برنامج تأهيل المعلمين والمعلمات لتعليم القرآن الكريم والتجويد واللغة العربية والدراسات الإسلامية لغير الناطقين بالعربية. اللغة الإنجليزية ليست عائقًا — البرنامج يشمل تدريب تواصل بالإنجليزية.</p>
+    <div class="btn-row">
+      <a class="btn solid js-wa" href="#contact">احجز مقعدك الآن</a>
+      <a class="btn ghost js-wa" href="#contact">احجز جلستك التجريبية المجانية</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="arch">
+      <div class="halo"></div>
+      <div class="word">عَلِّمْ</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span>جلسات لايف ومسجّلة <i class="dot">✦</i> تدريب عملي وورش <i class="dot">✦</i> مهام وتقييم مستمر <i class="dot">✦</i> تدريب تواصل بالإنجليزية <i class="dot">✦</i> مساعدة المتميّزين في إيجاد فرص عمل <i class="dot">✦</i> مدة البرنامج 5 أشهر <i class="dot">✦</i></span>
+    <span>جلسات لايف ومسجّلة <i class="dot">✦</i> تدريب عملي وورش <i class="dot">✦</i> مهام وتقييم مستمر <i class="dot">✦</i> تدريب تواصل بالإنجليزية <i class="dot">✦</i> مساعدة المتميّزين في إيجاد فرص عمل <i class="dot">✦</i> مدة البرنامج 5 أشهر <i class="dot">✦</i></span>
+  </div>
+</div>
+
+<section class="section" id="program">
+  <div class="section-head">
+    <div class="eyebrow">لماذا هذا البرنامج؟</div>
+    <h2>كل ما تحتاجه لتصبح معلّمًا لغير الناطقين بالعربية</h2>
+    <p>برنامج متكامل مدته 5 أشهر، يجمع بين الدراسة والتطبيق العملي، ويؤهلك للتدريس أونلاين من بيتك.</p>
+  </div>
+  <div class="grid2">
+    <div class="card dark">
+      <h3>ماذا يشمل البرنامج؟</h3>
+      <ul>
+        <li>جلسات لايف + تسجيلات لكل الجلسات</li>
+        <li>تدريب عملي وورش تطبيقية</li>
+        <li>مهام وتقييم وملاحظات مستمرة</li>
+        <li>تدريب تواصل باللغة الإنجليزية مع الطلاب</li>
+        <li>مساعدة المتميّزين في إيجاد فرص عمل بعد التخرج</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>حصتان مجانيتان لمهارات التعليم أونلاين</h3>
+      <p>مع البرنامج تحصل مجانًا على حصتين لتعلّم أدوات المعلم أونلاين:</p>
+      <ul>
+        <li>Word و Excel</li>
+        <li>Zoom و Whiteboard</li>
+        <li>Canva و PowerPoint</li>
+        <li>الألعاب التعليمية وإعداد المواد التعليمية</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="courses" style="padding-top:0">
+  <div class="section-head">
+    <div class="eyebrow">محتوى البرنامج</div>
+    <h2>تبدأ الدفعة الثانية بهذه الدورات</h2>
+    <p>الأسعار الموضحة هي أسعار الدورة المنفصلة بعد خصم 30٪. احجز البرنامج كاملًا واحصل على خصم 50٪.</p>
+  </div>
+  <div class="grid4">
+    <div class="course">
+      <div class="glyph">ٱلْفُصْحَى</div>
+      <h4>الفصحى والتفسير</h4>
+      <p>قواعد اللغة العربية (الأجزاء الثمانية) كاملة، مع تفسير القرآن الكريم، وكيفية تبسيطهما للطلاب غير الناطقين بالعربية.</p>
+      <div class="price">900 ج.م</div>
+    </div>
+    <div class="course">
+      <div class="glyph">نُور ٱلْبَيَان</div>
+      <h4>نور البيان</h4>
+      <p>منهج نور البيان كاملًا باللغة الإنجليزية، وكيفية تدريسه للأطفال والمبتدئين من غير الناطقين بالعربية.</p>
+      <div class="price">520 ج.م</div>
+    </div>
+    <div class="course">
+      <div class="glyph">تَجْوِيد</div>
+      <h4>التجويد</h4>
+      <p>أحكام التجويد للمستويين الأساسي والمتقدم، مع التطبيق العملي على التلاوة وطرق تصحيحها للطلاب.</p>
+      <div class="price">580 ج.م</div>
+    </div>
+    <div class="course">
+      <div class="glyph">ٱلْإِسْلَامِيَّات</div>
+      <h4>الدراسات الإسلامية</h4>
+      <p>تدريس كتاب «ما لا يسع أطفال المسلمين جهله» بالإنجليزية، وسلسلة Islamic Series من 1 إلى 12، مع تدريب عملي.</p>
+      <div class="price">650 ج.م</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing" style="padding-top:0">
+  <div class="section-head">
+    <div class="eyebrow">الأسعار والخصومات</div>
+    <h2>خصم 50٪ على البرنامج الكامل</h2>
+    <p>الدفعة الثانية — عرض خاص بمناسبة الافتتاح: خصم 50٪ على الباكدج الكاملة، وخصم 30٪ على أي دورة منفصلة.</p>
+  </div>
+  <div class="grid3" style="max-width:980px;margin:0 auto">
+    <div class="plan">
+      <h4>دورة منفصلة</h4>
+      <div class="amount">520–900 <small>ج.م</small></div>
+      <div class="was">بعد خصم 30٪</div>
+      <ul>
+        <li>اختر دورة واحدة من الأربع</li>
+        <li>جلسات لايف + تسجيلات</li>
+        <li>تدريب عملي ومهام وتقييم</li>
+        <li>الحصتان المجانيتان للمهارات</li>
+      </ul>
+      <a class="btn solid js-wa" href="#contact">احجز دورتك</a>
+    </div>
+    <div class="plan featured">
+      <div class="badge">الأفضل قيمة — خصم 50٪</div>
+      <h4>البرنامج الكامل</h4>
+      <div class="amount">2360 <small>ج.م</small></div>
+      <div class="was"><s>4600 ج.م</s> وفّر 2240 ج.م</div>
+      <ul>
+        <li>الدورات الأربع كاملة</li>
+        <li>مدة البرنامج 5 أشهر</li>
+        <li>جلسات لايف + تسجيلات</li>
+        <li>ورش ومهام وتقييم مستمر</li>
+        <li>تدريب تواصل بالإنجليزية</li>
+        <li>الحصتان المجانيتان للمهارات</li>
+        <li>مساعدة المتميّزين في إيجاد فرص عمل</li>
+      </ul>
+      <a class="btn js-wa" href="#contact">احجز البرنامج الكامل</a>
+    </div>
+    <div class="plan">
+      <h4>جلسة تجريبية</h4>
+      <div class="amount">0 <small>ج.م</small></div>
+      <div class="was">مجانية تمامًا</div>
+      <ul>
+        <li>احضر جلسة حقيقية من البرنامج</li>
+        <li>تعرّف على أسلوب التدريس</li>
+        <li>اسأل عن كل ما يهمك</li>
+        <li>بلا أي التزام</li>
+      </ul>
+      <a class="btn solid js-wa" href="#contact">احجز جلستك المجانية</a>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="installments">
+  <div class="section" style="padding-top:64px;padding-bottom:64px">
+    <div class="section-head">
+      <div class="eyebrow">أنظمة التقسيط</div>
+      <h2>قسّط البرنامج الكامل على ما يناسبك</h2>
+      <p>أنظمة تقسيط مرنة للبرنامج الكامل (يُضاف 100 ج.م شهريًا على نظام التقسيط):</p>
+    </div>
+    <div class="grid3">
+      <div class="step"><div class="num">×2</div><h4>شهران</h4><p>1280 ج.م شهريًا × 2</p></div>
+      <div class="step"><div class="num">×3</div><h4>3 أشهر</h4><p>890 ج.م شهريًا × 3</p></div>
+      <div class="step"><div class="num">×4</div><h4>4 أشهر</h4><p>690 ج.م شهريًا × 4</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pay" style="padding-top:0">
+  <div class="section-head">
+    <div class="eyebrow">كيف تحجز وتدفع؟</div>
+    <h2>الحجز في 4 خطوات بسيطة</h2>
+  </div>
+  <div class="grid4" style="margin-bottom:34px">
+    <div class="step"><div class="num">01</div><h4>راسلنا على واتساب</h4><p>أرسل رسالة على رقم الحجز وسنرد عليك في أقرب وقت.</p></div>
+    <div class="step"><div class="num">02</div><h4>أرسل بياناتك</h4><p>الاسم، السن، المؤهل الدراسي، والدورة التي تريدها (أو البرنامج الكامل).</p></div>
+    <div class="step"><div class="num">03</div><h4>حوّل على المحفظة</h4><p>حوّل المبلغ على محفظتنا الإلكترونية (فودافون كاش أو أي محفظة).</p></div>
+    <div class="step"><div class="num">04</div><h4>أرسل الإيصال وابدأ</h4><p>أرسل صورة إيصال التحويل على واتساب، وتأكد مقعدك.</p></div>
+  </div>
+  <div class="grid2" style="max-width:880px;margin:0 auto">
+    <div class="paybox">
+      <h3 style="font-family:var(--quran);font-weight:400;color:var(--green);font-size:24px">الدفع بالمحفظة الإلكترونية</h3>
+      <div class="num">+20 122 577 9057</div>
+      <p>فودافون كاش أو تحويل من أي محفظة إلكترونية أو انستاباي.</p>
+      <p class="hint">بعد التحويل، أرسل صورة الإيصال على واتساب الحجز لتأكيد مقعدك.</p>
+    </div>
+    <div class="paybox">
+      <h3 style="font-family:var(--quran);font-weight:400;color:var(--green);font-size:24px">رقم الحجز (واتساب)</h3>
+      <div class="num js-wa-slot" style="font-size:24px">يُعلن قريبًا</div>
+      <p>كل الحجوزات والاستفسارات تتم عبر واتساب فقط.</p>
+      <p class="hint">سيُفعّل رقم الحجز هنا خلال أيام — تابعنا.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="word">كلمة</div>
+  <h2>مقعدك في الدفعة الثانية في انتظارك</h2>
+  <p>الأماكن محدودة والدفعة تبدأ خلال 5 أيام. احجز جلستك التجريبية المجانية الآن، أو سجّل مباشرة في البرنامج الكامل بخصم 50٪.</p>
+  <div class="btn-row" style="justify-content:center">
+    <a class="btn solid js-wa" href="#">احجز عبر واتساب</a>
+    <a class="btn js-wa" href="#">الجلسة التجريبية المجانية</a>
+  </div>
+  <div class="slot-note js-wa-note">رقم واتساب الحجز سيُعلن هنا خلال أيام</div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>
+      <a class="logo" href="#"><span class="mark">كلمة</span> Kalima Academy</a>
+      <p>أكاديمية كلمة — لتأهيل المعلمين. برنامج متكامل لتأهيل معلمي القرآن والتجويد والعربية والدراسات الإسلامية لغير الناطقين بالعربية.</p>
+    </div>
+    <div style="font-size:14px;color:#d8d2c4">
+      <div style="color:var(--gold);margin-bottom:12px;font-weight:700">روابط سريعة</div>
+      <div><a href="#program">البرنامج</a></div>
+      <div><a href="#courses">الدورات</a></div>
+      <div><a href="#pricing">الأسعار</a></div>
+      <div><a href="#pay">طريقة الدفع</a></div>
+    </div>
+  </div>
+  <div class="copy">© 2026 أكاديمية كلمة — جميع الحقوق محفوظة</div>
+</footer>
+
+</div><!-- /L.ar -->
+
+<!-- ══════════════ ENGLISH ══════════════ -->
+<div class="L en">
+
+<div class="announce">Batch 2 enrollment open · <b>Starts in 5 days — limited seats</b> · Free trial session</div>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="#"><span class="mark">كلمة</span> Kalima Academy</a>
+    <div class="nav-links">
+      <a href="#program">Program</a>
+      <a href="#courses">Courses</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#installments">Installments</a>
+      <a href="#pay">How to Pay</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="lang-btn" onclick="setLang('ar')">عربي</button>
+    <a class="nav-cta" href="#contact">Free Trial</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow">Kalima Academy — Teacher Qualification Program</div>
+    <h1>Teacher Qualification Program — <em>Batch 2</em></h1>
+    <div class="tagline">Kalima Academy — for making teachers more qualified.</div>
+    <div class="urgency">⏰ Batch 2 starts in 5 days — limited seats</div>
+    <p>After the success of Batch 1, registration is open for Batch 2 of our program qualifying teachers (men and women) to teach Quran, tajweed, Arabic and Islamic studies to non-native speakers. English is not a barrier — English communication training is included.</p>
+    <div class="btn-row">
+      <a class="btn solid js-wa" href="#contact">Book Your Seat</a>
+      <a class="btn ghost js-wa" href="#contact">Book a Free Trial Session</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="arch">
+      <div class="halo"></div>
+      <div class="word">عَلِّمْ</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span>Live + Recorded Sessions <i class="dot">✦</i> Practical Training <i class="dot">✦</i> Workshops & Feedback <i class="dot">✦</i> English Communication <i class="dot">✦</i> Job-Placement Help for Top Graduates <i class="dot">✦</i> 5-Month Program <i class="dot">✦</i></span>
+    <span>Live + Recorded Sessions <i class="dot">✦</i> Practical Training <i class="dot">✦</i> Workshops & Feedback <i class="dot">✦</i> English Communication <i class="dot">✦</i> Job-Placement Help for Top Graduates <i class="dot">✦</i> 5-Month Program <i class="dot">✦</i></span>
+  </div>
+</div>
+
+<section class="section" id="program">
+  <div class="section-head">
+    <div class="eyebrow">Why This Program</div>
+    <h2>Everything you need to teach non-native speakers</h2>
+    <p>A complete 5-month program combining study with hands-on practice, preparing you to teach online from home.</p>
+  </div>
+  <div class="grid2">
+    <div class="card dark">
+      <h3>What the program includes</h3>
+      <ul>
+        <li>Live sessions + recordings of every session</li>
+        <li>Practical training and applied workshops</li>
+        <li>Tasks, assessment and continuous feedback</li>
+        <li>English communication training with students</li>
+        <li>Job-placement help for top graduates</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Two FREE online-teaching skills sessions</h3>
+      <p>With the program you get two free sessions on the online teacher's toolkit:</p>
+      <ul>
+        <li>Word &amp; Excel</li>
+        <li>Zoom &amp; Whiteboard</li>
+        <li>Canva &amp; PowerPoint</li>
+        <li>Educational games &amp; preparing teaching materials</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="courses" style="padding-top:0">
+  <div class="section-head">
+    <div class="eyebrow">Program Content</div>
+    <h2>Batch 2 starts with these courses</h2>
+    <p>Prices shown are single-course prices after the 30% discount. Book the full program and get 50% off.</p>
+  </div>
+  <div class="grid4">
+    <div class="course">
+      <div class="glyph">ٱلْفُصْحَى</div>
+      <h4>MSA &amp; Tafsir</h4>
+      <p>Complete Arabic grammar (the Eight Parts) plus Quran tafsir — and how to simplify both for non-native students.</p>
+      <div class="price">EGP 900</div>
+    </div>
+    <div class="course">
+      <div class="glyph">نُور ٱلْبَيَان</div>
+      <h4>Noor Al-Bayan</h4>
+      <p>The full Noor Al-Bayan curriculum in English, and how to teach it to children and beginner non-native speakers.</p>
+      <div class="price">EGP 520</div>
+    </div>
+    <div class="course">
+      <div class="glyph">تَجْوِيد</div>
+      <h4>Tajweed</h4>
+      <p>Tajweed rules at basic and advanced levels, with hands-on recitation practice and how to correct students.</p>
+      <div class="price">EGP 580</div>
+    </div>
+    <div class="course">
+      <div class="glyph">ٱلْإِسْلَامِيَّات</div>
+      <h4>Islamic Studies</h4>
+      <p>Teaching "What Muslim Children Cannot Afford to Be Ignorant Of" in English, the Islamic Series 1–12, plus practical training.</p>
+      <div class="price">EGP 650</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing" style="padding-top:0">
+  <div class="section-head">
+    <div class="eyebrow">Pricing &amp; Discounts</div>
+    <h2>50% off the full program</h2>
+    <p>Batch 2 opening offer: 50% off the full package, and 30% off any single course.</p>
+  </div>
+  <div class="grid3" style="max-width:980px;margin:0 auto">
+    <div class="plan">
+      <h4>Single Course</h4>
+      <div class="amount">520–900 <small>EGP</small></div>
+      <div class="was">After 30% discount</div>
+      <ul>
+        <li>Pick any one of the four courses</li>
+        <li>Live sessions + recordings</li>
+        <li>Practical training, tasks, feedback</li>
+        <li>Two free skills sessions</li>
+      </ul>
+      <a class="btn solid js-wa" href="#contact">Book Your Course</a>
+    </div>
+    <div class="plan featured">
+      <div class="badge">Best Value — 50% Off</div>
+      <h4>Full Program</h4>
+      <div class="amount">2360 <small>EGP</small></div>
+      <div class="was"><s>EGP 4600</s> — save EGP 2240</div>
+      <ul>
+        <li>All four courses</li>
+        <li>5-month program</li>
+        <li>Live sessions + recordings</li>
+        <li>Workshops, tasks, feedback</li>
+        <li>English communication training</li>
+        <li>Two free skills sessions</li>
+        <li>Job-placement help for top graduates</li>
+      </ul>
+      <a class="btn js-wa" href="#contact">Book the Full Program</a>
+    </div>
+    <div class="plan">
+      <h4>Trial Session</h4>
+      <div class="amount">0 <small>EGP</small></div>
+      <div class="was">Completely free</div>
+      <ul>
+        <li>Attend a real program session</li>
+        <li>Experience the teaching style</li>
+        <li>Ask anything you need</li>
+        <li>No commitment</li>
+      </ul>
+      <a class="btn solid js-wa" href="#contact">Book Your Free Session</a>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="installments">
+  <div class="section" style="padding-top:64px;padding-bottom:64px">
+    <div class="section-head">
+      <div class="eyebrow">Installment Plans</div>
+      <h2>Split the full program your way</h2>
+      <p>Flexible installment plans for the full program (EGP 100/month added on installment plans):</p>
+    </div>
+    <div class="grid3">
+      <div class="step"><div class="num">×2</div><h4>2 months</h4><p>EGP 1,280 / month × 2</p></div>
+      <div class="step"><div class="num">×3</div><h4>3 months</h4><p>EGP 890 / month × 3</p></div>
+      <div class="step"><div class="num">×4</div><h4>4 months</h4><p>EGP 690 / month × 4</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pay" style="padding-top:0">
+  <div class="section-head">
+    <div class="eyebrow">How to Book &amp; Pay</div>
+    <h2>Book in 4 simple steps</h2>
+  </div>
+  <div class="grid4" style="margin-bottom:34px">
+    <div class="step"><div class="num">01</div><h4>Message us on WhatsApp</h4><p>Send a message to the booking number and we will reply shortly.</p></div>
+    <div class="step"><div class="num">02</div><h4>Send your details</h4><p>Name, age, qualification, and the course you want (or the full program).</p></div>
+    <div class="step"><div class="num">03</div><h4>Transfer to the wallet</h4><p>Transfer the amount to our mobile wallet (Vodafone Cash or any wallet).</p></div>
+    <div class="step"><div class="num">04</div><h4>Send the receipt &amp; start</h4><p>Send the transfer receipt on WhatsApp, and your seat is confirmed.</p></div>
+  </div>
+  <div class="grid2" style="max-width:880px;margin:0 auto">
+    <div class="paybox">
+      <h3 style="font-family:var(--quran);font-weight:400;color:var(--green);font-size:24px">Pay by mobile wallet</h3>
+      <div class="num">+20 122 577 9057</div>
+      <p>Vodafone Cash, any Egyptian mobile wallet, or InstaPay transfer.</p>
+      <p class="hint">After transferring, send the receipt to the booking WhatsApp to confirm your seat.</p>
+    </div>
+    <div class="paybox">
+      <h3 style="font-family:var(--quran);font-weight:400;color:var(--green);font-size:24px">Booking WhatsApp</h3>
+      <div class="num js-wa-slot" style="font-size:24px">Coming soon</div>
+      <p>All bookings and questions happen on WhatsApp only.</p>
+      <p class="hint">The booking number will be activated here within days — stay tuned.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="word">كلمة</div>
+  <h2>Your seat in Batch 2 is waiting</h2>
+  <p>Seats are limited and the batch starts in 5 days. Book your free trial session now, or register directly in the full program at 50% off.</p>
+  <div class="btn-row" style="justify-content:center">
+    <a class="btn solid js-wa" href="#">Book on WhatsApp</a>
+    <a class="btn js-wa" href="#">Free Trial Session</a>
+  </div>
+  <div class="slot-note js-wa-note">The booking WhatsApp number will be announced here within days</div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>
+      <a class="logo" href="#"><span class="mark">كلمة</span> Kalima Academy</a>
+      <p>Kalima Academy — for making teachers more qualified. A complete program qualifying teachers of Quran, tajweed, Arabic and Islamic studies for non-native speakers.</p>
+    </div>
+    <div style="font-size:14px;color:#d8d2c4">
+      <div style="color:var(--gold);margin-bottom:12px;font-weight:700">Quick Links</div>
+      <div><a href="#program">Program</a></div>
+      <div><a href="#courses">Courses</a></div>
+      <div><a href="#pricing">Pricing</a></div>
+      <div><a href="#pay">How to Pay</a></div>
+    </div>
+  </div>
+  <div class="copy">© 2026 Kalima Academy — All rights reserved</div>
+</footer>
+
+</div><!-- /L.en -->
+
+<script>
+/* ── EDIT ME: the WhatsApp booking number (digits only, international
+   format, e.g. "2010XXXXXXXX"). While it stays "", every WhatsApp button
+   points to the "coming soon" note instead. ── */
+const WA_NUMBER = "";
+
+function setLang(l){
+  document.body.classList.toggle('en', l === 'en');
+  document.documentElement.lang = l;
+  document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+  window.scrollTo(0,0);
+}
+
+document.querySelectorAll('.js-wa').forEach(a => {
+  a.addEventListener('click', e => {
+    if (WA_NUMBER) {
+      a.href = 'https://wa.me/' + WA_NUMBER;
+      a.target = '_blank';
+    } else {
+      e.preventDefault();
+      document.querySelectorAll('.js-wa-slot, .js-wa-note').forEach(el => {
+        el.scrollIntoView({behavior:'smooth', block:'center'});
+      });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
